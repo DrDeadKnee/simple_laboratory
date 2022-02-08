@@ -1,0 +1,6 @@
+[user]
+	email = duncan.halverson@gmail.com
+	name = DrDeadKnee
+[merge]
+	tool = vimdiff
+	conflictstyle = diff3

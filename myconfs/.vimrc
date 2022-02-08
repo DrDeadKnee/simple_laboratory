@@ -1,0 +1,46 @@
+set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'gmarik/Vundle.vim'
+
+" Plugins go here:
+Plugin 'andviro/flake8-vim'
+Plugin 'LanguageTool'
+
+" All plugins must be added before this line
+call vundle#end()
+filetype plugin indent on
+
+" Some default preferences
+set number
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set autoindent
+set expandtab
+set foldmethod=indent
+set foldlevel=99
+nnoremap <space> za
+
+" Configure flake8-vim
+let g:PyFlakeOneWrite=1
+let g:PyFlakeCheckers="pep8,mccabe,frosted"
+let g:PyFlakeDefaulComplexity=10
+let g:PyFlakeAggressive=0
+let g:PyFlakeCWindow=6
+let g:PyFlakeSigns=1
+let g:PyFlakeSignStart=1
+let g:PyFlakeMaxLineLength=100
+let g:PyFlakeRangeCommand='Q'
+
+" Preferences for python
+au BufNewFile,BufRead *.py
+  \ set tabstop=4       |
+  \ set softtabstop=4   |
+  \ set shiftwidth=4    |
+  \ set textwidth=100   |
+  \ set fileformat=unix |
+

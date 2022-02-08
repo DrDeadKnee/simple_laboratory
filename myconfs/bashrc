@@ -1,0 +1,42 @@
+# source global definitions
+if [ -f /etc/bashrc ]; then
+  . /etc/bashrc
+fi
+
+# source autocomplete stuff
+for file in /etc/bash_completion.bash* ; do
+  source "$file"
+done
+
+if [ -f .local/git-completion.bash ]; then
+  source .local/git-completion.bash
+fi
+
+# standard aliases
+alias ll='ls -alF'
+alias la='ls -alF'
+alias l='ls -CF'
+alias edit='vim'
+alias vi='vim'
+
+# Define some preferences
+export TMOUT=0
+export VISUAL=vim
+export EDITOR=$VISUAL
+HISTCONTROL=ignoreboth
+shopt -s$ histappend
+HISTSIZE=10000
+HISTFILESIZE=20000
+
+# Colorful Ubuntu choices
+if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls --color=auto'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+fi
+
+case "$TERM" in
+    xterm-color|*-256color) color_prompt=yes;;
+esac
