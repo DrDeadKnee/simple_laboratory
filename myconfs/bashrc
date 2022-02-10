@@ -4,11 +4,13 @@ if [ -f /etc/bashrc ]; then
 fi
 
 # source autocomplete stuff
-for file in /etc/bash_completion.bash* ; do
-  source "$file"
-done
+if [ -d /etc/bash_completion.bash ]; then
+  for file in /etc/bash_completion.bash* ; do
+    source "$file"
+  done
+fi
 
-if [ -f .local/git-completion.bash ]; then
+if [ -e .local/git-completion.bash ]; then
   source .local/git-completion.bash
 fi
 
@@ -24,7 +26,6 @@ export TMOUT=0
 export VISUAL=vim
 export EDITOR=$VISUAL
 HISTCONTROL=ignoreboth
-shopt -s$ histappend
 HISTSIZE=10000
 HISTFILESIZE=20000
 
