@@ -40,3 +40,6 @@ fi
 case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
+
+# Set vim keybindings
+set -o vi
