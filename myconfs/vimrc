@@ -10,11 +10,15 @@ Plugin 'gmarik/Vundle.vim'
 Plugin 'andviro/flake8-vim'
 Plugin 'LanguageTool'
 
+Plugin 'pangloss/vim-javascript'
+Plugin 'MaxMEllon/vim-jsx-pretty'
+
 " All plugins must be added before this line
 call vundle#end()
 filetype plugin indent on
 
 " Some default preferences
+set belloff=all
 set number
 set tabstop=2
 set softtabstop=2
