@@ -1,4 +1,5 @@
 # source global definitions
+
 if [ -f /etc/bashrc ]; then
   . /etc/bashrc
 fi
@@ -44,3 +45,6 @@ esac
 
 # Set vim keybindings
 set -o vi
+
+# Source conda
+source ~/miniconda3/bin/activate
